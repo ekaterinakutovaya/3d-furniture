@@ -6,6 +6,8 @@ import { Button } from "@/components/ui/button";
 import CustomCanvas from "@/components/CustomCanvas";
 import { Chair001 } from "@/components/items/Chair001";
 import Customizer from "@/components/Customizer";
+import { Suspense } from "react";
+import Loader from "@/components/Loader";
 
 const Showcase = () => {
   return (
@@ -27,7 +29,9 @@ const Showcase = () => {
 
           <div className="w-full lg:w-1/2 h-[350px] lg:h-[750px] order-1 xl:order-none max-w-[453px] mx-auto xl:max-w-none xl:mx-0">
             <CustomCanvas>
-              <Chair001 scale={0.11} position={[0, -4, 0]} />
+              <Suspense fallback={<Loader />}>
+                <Chair001 scale={0.11} position={[0, -4, 0]} />
+              </Suspense>
             </CustomCanvas>
 
             <Customizer furnitureId={1} />

@@ -1,5 +1,5 @@
 // useFurnitureStore.js
-import create from "zustand";
+import { create } from "zustand";
 
 const useFurnitureStore = create((set) => ({
   furniture: [

@@ -1,12 +1,13 @@
 "use client";
 
-import { Decal, useGLTF, useTexture } from "@react-three/drei";
+import { useGLTF } from "@react-three/drei";
 import useFurnitureStore from "@/store/useFurnitureStore";
 import { useEffect, useState } from "react";
 import { colors } from "@/constants";
 
 export function Chair001(props) {
   const { nodes, materials } = useGLTF("./models/scene.gltf");
+
   const [fabricColor, setFabricColor] = useState(null);
 
   const furnitureItem = useFurnitureStore((state) =>
